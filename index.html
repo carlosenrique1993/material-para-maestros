@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Material didáctico gratuito para maestros de educación primaria. Encuentra recursos y planeaciones para facilitar tu enseñanza.">
-    <title>Material Didáctico</title>
+    <meta name="description" content="Recursos gratuitos para maestros de primaria: planeaciones, materiales didácticos y herramientas educativas para mejorar la enseñanza.">
+    <meta name="keywords" content="material didáctico, planeaciones, educación primaria, recursos para maestros, enseñanza">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Carlos Elías">
+    
+    <!-- Open Graph (para mejorar apariencia en Facebook, WhatsApp, etc.) -->
+    <meta property="og:title" content="Material Didáctico para Maestros">
+    <meta property="og:description" content="Encuentra materiales gratuitos para educación primaria, planeaciones y recursos para mejorar tu enseñanza.">
+    <meta property="og:image" content="https://tusitio.com/imagen-previa.jpg">
+    <meta property="og:url" content="https://tusitio.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card (para mejorar apariencia en Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Material Didáctico para Maestros">
+    <meta name="twitter:description" content="Accede a recursos educativos gratuitos para maestros de primaria.">
+    <meta name="twitter:image" content="https://tusitio.com/imagen-previa.jpg">
+    
+    <title>Material Didáctico para Maestros | Recursos Educativos Gratis</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,6 +36,15 @@
             color: white;
             padding: 15px;
             font-size: 1.5em;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #4CAF50;
+            margin: 0 15px;
+            font-weight: bold;
         }
         section {
             margin: 20px auto;
@@ -69,24 +96,34 @@
 <body>
     <header>
         <h1>Material Didáctico para Maestros</h1>
+        <nav>
+            <a href="#materiales">📂 Material</a>
+            <a href="#contacto">📩 Contacto</a>
+        </nav>
     </header>
     
-    <section>
-        <h2>Lista de Material</h2>
-        <ul class="material-list">
-            <li><a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank">📂 Carpeta con todas las planeaciones</a></li>
-        </ul>
+    <section id="materiales">
+        <h2>📚 Lista de Material</h2>
+        <article>
+            <ul class="material-list">
+                <li>
+                    <a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank">
+                        📂 Carpeta con todas las planeaciones
+                    </a>
+                </li>
+            </ul>
+        </article>
     </section>
     
-    <section>
-        <h2>Contacto</h2>
+    <section id="contacto">
+        <h2>📩 Contacto</h2>
         <p>Si tienes sugerencias o quieres compartir material, escríbeme a:</p>
         <p><strong id="email">carlos.elias@jaliscoedu.mx</strong></p>
         <button class="copy-btn" onclick="copyEmail()">📋 Copiar correo</button>
     </section>
     
     <footer>
-        <p>&copy; 2025 Material Didáctico para Maestros</p>
+        <p>&copy; 2025 Material Didáctico para Maestros | Creado por Carlos Elías</p>
     </footer>
 
     <script>
@@ -101,4 +138,3 @@
     </script>
 </body>
 </html>
-
