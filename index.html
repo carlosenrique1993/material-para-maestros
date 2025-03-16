@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Material didáctico gratuito para maestros de educación primaria. Encuentra recursos y planeaciones para facilitar tu enseñanza.">
     <title>Material Didáctico</title>
     <style>
         body {
@@ -10,14 +11,21 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            background-color: #f4f4f4;
         }
         header {
             background: #4CAF50;
             color: white;
             padding: 15px;
+            font-size: 1.5em;
         }
         section {
-            margin: 20px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
         }
         .material-list {
             list-style: none;
@@ -25,11 +33,36 @@
         }
         .material-list li {
             margin: 10px 0;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 5px;
+        }
+        .material-list a {
+            text-decoration: none;
+            color: #2E7D32;
+            font-weight: bold;
+        }
+        .material-list a:hover {
+            text-decoration: underline;
+        }
+        .copy-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .copy-btn:hover {
+            background: #388E3C;
         }
         footer {
             margin-top: 20px;
             padding: 10px;
             background: #f1f1f1;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -41,17 +74,31 @@
     <section>
         <h2>Lista de Material</h2>
         <ul class="material-list">
-            <li><a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank">Carpeta con todas la planeaciones</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank">📂 Carpeta con todas las planeaciones</a></li>
         </ul>
     </section>
     
     <section>
         <h2>Contacto</h2>
-        <p>Si tienes sugerencias o quieres compartir material, escríbeme a: <strong>carlos.elias@jaliscoedu.mx</strong></p>
+        <p>Si tienes sugerencias o quieres compartir material, escríbeme a:</p>
+        <p><strong id="email">carlos.elias@jaliscoedu.mx</strong></p>
+        <button class="copy-btn" onclick="copyEmail()">📋 Copiar correo</button>
     </section>
     
     <footer>
         <p>&copy; 2025 Material Didáctico para Maestros</p>
     </footer>
+
+    <script>
+        function copyEmail() {
+            const emailText = document.getElementById("email").innerText;
+            navigator.clipboard.writeText(emailText).then(() => {
+                alert("Correo copiado: " + emailText);
+            }).catch(err => {
+                console.error("Error al copiar el correo", err);
+            });
+        }
+    </script>
 </body>
 </html>
+
