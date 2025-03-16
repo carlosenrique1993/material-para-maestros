@@ -29,7 +29,6 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
         }
         header {
             background: #4CAF50;
@@ -99,12 +98,11 @@
     </header>
     
     <section id="materiales">
-        <h2>📚 Lista de Material</h2>
         <article>
             <ul class="material-list">
                 <li>
                     <a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank">
-                        📂 Carpeta con todas las planeaciones
+                        📂 Carpeta con todas las planeaciones 📚
                     </a>
                 </li>
             </ul>
@@ -132,6 +130,17 @@
                 console.error("Error al copiar el correo", err);
             });
         }
+
+        // Función para generar un color RGB aleatorio
+        function getRandomColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        // Asigna un color de fondo aleatorio al cuerpo al cargar la página
+        document.body.style.backgroundColor = getRandomColor();
     </script>
 </body>
 </html>
