@@ -29,6 +29,9 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff); /* Fondo inicial */
+            background-size: cover;
+            min-height: 100vh;
         }
         header {
             background: #4CAF50;
@@ -122,6 +125,29 @@
     </footer>
 
     <script>
+        // Función para generar un color hexadecimal aleatorio
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Función para generar un gradiente de tres colores aleatorios
+        function setRandomGradient() {
+            const color1 = getRandomColor();
+            const color2 = getRandomColor();
+            const color3 = getRandomColor();
+            const gradient = `linear-gradient(135deg, ${color1}, ${color2}, ${color3})`;
+            document.body.style.background = gradient;
+        }
+
+        // Aplicar el gradiente al cargar o actualizar la página
+        setRandomGradient();
+
+        // Función para copiar el correo electrónico
         function copyEmail() {
             const emailText = document.getElementById("email").innerText;
             navigator.clipboard.writeText(emailText).then(() => {
@@ -130,17 +156,6 @@
                 console.error("Error al copiar el correo", err);
             });
         }
-
-        // Función para generar un color RGB aleatorio
-        function getRandomColor() {
-            const r = Math.floor(Math.random() * 256);
-            const g = Math.floor(Math.random() * 256);
-            const b = Math.floor(Math.random() * 256);
-            return `rgb(${r}, ${g}, ${b})`;
-        }
-
-        // Asigna un color de fondo aleatorio al cuerpo al cargar la página
-        document.body.style.backgroundColor = getRandomColor();
     </script>
 </body>
 </html>
