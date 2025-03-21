@@ -14,12 +14,14 @@
     <meta property="og:image" content="https://tusitio.com/imagen-previa.jpg">
     <meta property="og:url" content="https://tusitio.com">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Material Didáctico para Maestros">
     
     <!-- Twitter Card (para mejorar apariencia en Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Material Didáctico para Maestros">
     <meta name="twitter:description" content="Accede a recursos educativos gratuitos para maestros de primaria.">
     <meta name="twitter:image" content="https://tusitio.com/imagen-previa.jpg">
+    <meta name="twitter:site" content="@tusitio">
     
     <title>Material Didáctico para Maestros | Recursos Educativos Gratis</title>
     
@@ -32,6 +34,7 @@
             background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff); /* Fondo inicial */
             background-size: cover;
             min-height: 100vh;
+            color: #333; /* Mejor contraste para texto */
         }
         header {
             background: #4CAF50;
@@ -47,6 +50,10 @@
             color: #4CAF50;
             margin: 0 15px;
             font-weight: bold;
+            transition: color 0.3s ease; /* Transición suave */
+        }
+        nav a:hover {
+            color: #388E3C; /* Cambio de color al pasar el mouse */
         }
         section {
             margin: 20px auto;
@@ -70,9 +77,11 @@
             text-decoration: none;
             color: #2E7D32;
             font-weight: bold;
+            transition: color 0.3s ease; /* Transición suave */
         }
         .material-list a:hover {
             text-decoration: underline;
+            color: #1B5E20; /* Cambio de color al pasar el mouse */
         }
         .copy-btn {
             background: #4CAF50;
@@ -83,6 +92,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
+            transition: background-color 0.3s ease; /* Transición suave */
         }
         .copy-btn:hover {
             background: #388E3C;
@@ -93,6 +103,22 @@
             background: #f1f1f1;
             font-size: 0.9em;
         }
+
+        /* Diseño responsivo */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.2em;
+                padding: 10px;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            section {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,11 +126,16 @@
         <h1>Material Didáctico para Maestros</h1>
     </header>
     
+    <nav>
+        <a href="#materiales">Materiales</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    
     <section id="materiales">
         <article>
             <ul class="material-list">
                 <li>
-                    <a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank">
+                    <a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank" aria-label="Carpeta con planeaciones">
                         📂 Carpeta con todas las planeaciones 📚
                     </a>
                 </li>
@@ -116,8 +147,8 @@
     <section id="contacto">
         <h2>📩 Contacto</h2>
         <p>Si tienes sugerencias o quieres compartir material, escríbeme a:</p>
-        <p><strong id="email">carlos.elias@jaliscoedu.mx</strong></p>
-        <button class="copy-btn" onclick="copyEmail()">📋 Copiar correo</button>
+        <p><strong id="email"></strong></p>
+        <button class="copy-btn" onclick="copyEmail()" aria-label="Copiar correo electrónico">📋 Copiar correo</button>
     </section>
     
     <footer>
@@ -151,11 +182,19 @@
         function copyEmail() {
             const emailText = document.getElementById("email").innerText;
             navigator.clipboard.writeText(emailText).then(() => {
-                alert("Correo copiado: " + emailText);
+                const copyBtn = document.querySelector('.copy-btn');
+                copyBtn.textContent = '✔️ Copiado';
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 Copiar correo';
+                }, 2000);
             }).catch(err => {
                 console.error("Error al copiar el correo", err);
             });
         }
+
+        // Ofuscar el correo electrónico para protegerlo de bots
+        const email = "carlos" + ".elias" + "@jaliscoedu.mx";
+        document.getElementById("email").textContent = email;
     </script>
 </body>
 </html>
