@@ -23,7 +23,7 @@
     <meta name="twitter:image" content="https://tusitio.com/imagen-previa.jpg">
     <meta name="twitter:site" content="@tusitio">
     
-    <title>Material Didáctico para Maestros | Recursos Educativos Gratis</title>
+    <title>Material para Maestros | Recursos Educativos Gratis</title>
     
     <style>
         body {
@@ -47,7 +47,7 @@
         }
         nav a {
             text-decoration: none;
-            color: #000000;
+            color: #fff;
             margin: 0 15px;
             font-weight: bold;
             transition: color 0.3s ease; /* Transición suave */
@@ -103,7 +103,6 @@
             background: #f1f1f1;
             font-size: 0.9em;
         }
-
         /* Diseño responsivo */
         @media (max-width: 600px) {
             header {
@@ -125,18 +124,22 @@
     <header>
         <h1>Material Didáctico para Maestros</h1>
     </header>
-    
+
     <nav>
-        <a href="#materiales">Materiales</a>
-        <a href="https://drive.google.com/drive/folders/1WRqkl05jTCxBISLkAbcbujDHfNggW28L?usp=drive_link">Juegos</a>
+        
     </nav>
-    
+
     <section id="materiales">
         <article>
             <ul class="material-list">
                 <li>
                     <a href="https://drive.google.com/drive/folders/1CNBEYn6Ja647T73g-naRa9n8xFfstjbV?usp=sharing" target="_blank" aria-label="Carpeta con planeaciones">
-                        📂 Carpeta con todas las planeaciones 📚
+                        📂 Planeaciones en DRIVE 📚
+                    </a>
+                </li>
+<li>
+                    <a href="https://drive.google.com/drive/folders/1WRqkl05jTCxBISLkAbcbujDHfNggW28L?usp=drive_link">
+                        📂 Juegos en DRIVE 📚
                     </a>
                 </li>
             </ul>
@@ -154,7 +157,6 @@
     <footer>
         <p>&copy; 2025 Material Didáctico para Maestros | Creado por Carlos Elías</p>
     </footer>
-
     <script>
         // Función para generar un color hexadecimal aleatorio
         function getRandomColor() {
@@ -165,7 +167,6 @@
             }
             return color;
         }
-
         // Función para generar un gradiente de tres colores aleatorios
         function setRandomGradient() {
             const color1 = getRandomColor();
@@ -174,10 +175,8 @@
             const gradient = `linear-gradient(135deg, ${color1}, ${color2}, ${color3})`;
             document.body.style.background = gradient;
         }
-
         // Aplicar el gradiente al cargar o actualizar la página
         setRandomGradient();
-
         // Función para copiar el correo electrónico
         function copyEmail() {
             const emailText = document.getElementById("email").innerText;
@@ -191,7 +190,6 @@
                 console.error("Error al copiar el correo", err);
             });
         }
-
         // Ofuscar el correo electrónico para protegerlo de bots
         const email = "carlos" + ".elias" + "@jaliscoedu.mx";
         document.getElementById("email").textContent = email;
